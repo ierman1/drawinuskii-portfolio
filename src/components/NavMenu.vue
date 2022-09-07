@@ -7,7 +7,7 @@
 			<router-link to="/contact">Contact</router-link>
 		</div>
 		<div class="socials">
-			<a href="" title="Instagram" target="_blank">
+			<a href="https://www.instagram.com/drawinuskii/" title="Instagram" target="_blank">
 				<font-awesome-icon icon="fa-brands fa-instagram" size="xl" />
 			</a>
 			<!--
@@ -15,7 +15,7 @@
 				<font-awesome-icon icon="fa-brands fa-twitter" size="xl" />
 			</a>
 			-->
-			<a href="" title="Artstation" target="_blank">
+			<a href="https://www.artstation.com/davinuskii" title="Artstation" target="_blank">
 				<font-awesome-icon icon="fa-brands fa-artstation" size="xl" />
 			</a>
 		</div>

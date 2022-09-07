@@ -7,23 +7,40 @@ body, html {
     padding: 0;
 }
 
-body::after {
+body::before {
     content: "";
     display: block;
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("@/assets/img/boceto2.png");
+    background-image: url("@/assets/img/bgs/boceto2.png");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
     overflow: hidden;
     opacity: 10%;
+    pointer-events: none;
     z-index: 1;
+
+    @media (min-width: 800px) {
+        background-size: contain;
+    }
 }
 
-body * {
-    z-index: 2;
+#app, #app * {
+    z-index: 10;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .view {
+        flex-grow: 1;
+    }
 }
 
 * {

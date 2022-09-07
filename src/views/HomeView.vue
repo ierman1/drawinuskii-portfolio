@@ -1,9 +1,11 @@
 <template>
-	<div class="home">
+	<div class="view home">
 		<div class="banner">
 			<h2>Davinia F. Duport</h2>
 			<p class="intro">
-				Animation student based in Madrid, Spain. Digital and traditional artist specialized in storyboard, character design, illustration and concept art. Experience with 3D and 2D animation. Currently working on my organic modeling skills.
+				Animation student based in Madrid, Spain. <br><br>
+				Digital and traditional artist specialized in storyboard, character design, illustration and concept art. <br><br>
+				Experience with 3D and 2D animation.
 			</p>
 		</div>
 
@@ -14,19 +16,19 @@
 				<div class="glide__track" data-glide-el="track">
 					<ul class="glide__slides">
 						<li class="glide__slide">
-							<img src="@/assets/img/home1.jpg" alt="">
+							<img src="@/assets/img/home/home1.jpg" alt="">
 						</li>
 						<li class="glide__slide">
-							<img src="@/assets/img/home2.jpg" alt="">
+							<img src="@/assets/img/home/home2.jpg" alt="">
 						</li>
 						<li class="glide__slide">
-							<img src="@/assets/img/home3.jpg" alt="">
+							<img src="@/assets/img/home/home3.jpg" alt="">
 						</li>
 						<li class="glide__slide">
-							<img src="@/assets/img/home4.jpg" alt="">
+							<img src="@/assets/img/home/home4.jpg" alt="">
 						</li>
 						<li class="glide__slide">
-							<img src="@/assets/img/home5.jpg" alt="">
+							<img src="@/assets/img/home/home5.jpg" alt="">
 						</li>
 					</ul>
 				</div>
@@ -66,8 +68,12 @@
 			display: flex;
 			flex-direction: column;
 			margin-bottom: 5rem;
-			padding: 5rem 3rem;
+			padding: 1rem 3rem;
 			text-align: center;
+
+			@media (min-width: 800px) {
+				padding: 5rem 3rem;
+			}
 
 			* {
 				color: $light-color;
@@ -103,10 +109,27 @@
 			}
 
 			img {
-				width: 300px;
+				height: 300px;
 
 				@media (min-width: 800px) {
-					width: 600px;
+					height: 600px;
+				}
+			}
+
+			.glide__arrow {
+				border-radius: 50%;
+				
+				svg path {
+					fill: $light-color;
+				}
+
+				@media (max-width: 1200px) {
+					background-color: $primary-color;
+					border-color: $light-color;
+
+					svg path {
+						fill: $light-color;
+					}
 				}
 			}
 		}
@@ -122,7 +145,19 @@ export default {
 	name: 'HomeView',
 	components: {},
 	mounted() {
-		new Glide('.glide').mount()
+		new Glide('.glide', {
+			type: 'carousel',
+			perView: 3,
+			focusAt: 'center',
+			breakpoints: {
+				1850: {
+					perView: 2
+				},
+				1200: {
+					perView: 1
+				}
+			}
+		}).mount()
 	}
 }
 
