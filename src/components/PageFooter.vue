@@ -13,6 +13,7 @@
 
 	.footer {
         background-color: $primary-color;
+        opacity: 80%;
         padding: 3rem;
         text-align: center;
 

@@ -68,6 +68,7 @@
 			display: flex;
 			flex-direction: column;
 			margin-bottom: 5rem;
+			opacity: 80%;
 			padding: 1rem 3rem;
 			text-align: center;
 
